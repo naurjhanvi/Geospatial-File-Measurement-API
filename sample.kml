@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <name>Geospatial Measurement API Sample</name>
+    <Placemark>
+      <name>Sample area</name>
+      <description>A small polygon for area measurement.</description>
+      <Polygon>
+        <outerBoundaryIs>
+          <LinearRing>
+            <coordinates>
+              77.5900,12.9700,0
+              77.5910,12.9700,0
+              77.5910,12.9710,0
+              77.5900,12.9710,0
+              77.5900,12.9700,0
+            </coordinates>
+          </LinearRing>
+        </outerBoundaryIs>
+      </Polygon>
+    </Placemark>
+    <Placemark>
+      <name>Sample road</name>
+      <description>A short line for length measurement.</description>
+      <LineString>
+        <coordinates>
+          77.5900,12.9698,0
+          77.5920,12.9698,0
+        </coordinates>
+      </LineString>
+    </Placemark>
+    <Placemark>
+      <name>Sample point</name>
+      <description>A point; measurement is not required.</description>
+      <Point>
+        <coordinates>77.5905,12.9705,0</coordinates>
+      </Point>
+    </Placemark>
+  </Document>
+</kml>

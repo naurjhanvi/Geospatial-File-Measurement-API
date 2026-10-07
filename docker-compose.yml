@@ -1,0 +1,26 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      DATA_DIR: /data
+      DATABASE_PATH: /data/geospatial.sqlite3
+    volumes:
+      - geospatial-data:/data
+    restart: unless-stopped
+
+  streamlit:
+    build: .
+    command: ["streamlit", "run", "streamlit_app.py", "--server.address=0.0.0.0", "--server.port=8501"]
+    ports:
+      - "8501:8501"
+    environment:
+      API_BASE_URL: http://api:8000
+      API_DOCS_URL: http://localhost:8000/docs
+    depends_on:
+      - api
+    restart: unless-stopped
+
+volumes:
+  geospatial-data:
